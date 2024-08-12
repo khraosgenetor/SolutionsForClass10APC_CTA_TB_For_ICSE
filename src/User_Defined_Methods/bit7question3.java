@@ -1,6 +1,5 @@
-package Non_Revision_Chapter5;
+package User_Defined_Methods;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class bit7question3 {
