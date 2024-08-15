@@ -6,14 +6,18 @@ class Display {
     void Display(String str, int p) {
         if (p == 1) {
             System.out.print("Uppercase characters: ");
-            for (char c : str.toCharArray()) {
+            int length = str.length();
+            for (int i = 0; i < length; i++) {
+                char c = str.charAt(i);
                 if (Character.isUpperCase(c)) {
                     System.out.print(c + " ");
                 }
             }
         } else {
             System.out.print("Lowercase characters: ");
-            for (char c : str.toCharArray()) {
+            int length = str.length();
+            for (int i = 0; i < length; i++) {
+                char c = str.charAt(i);
                 if (Character.isLowerCase(c)) {
                     System.out.print(c + " ");
                 }
@@ -25,14 +29,18 @@ class Display {
     void Display(String str, char chr) {
         if (chr == 'v') {
             System.out.print("Vowels: ");
-            for (char c : str.toCharArray()) {
+            int length = str.length();
+            for (int i = 0; i < length; i++) {
+                char c = str.charAt(i);
                 if ("AEIOUaeiou".indexOf(c) != -1) {
                     System.out.print(c + " ");
                 }
             }
         } else {
             System.out.print("All letters: ");
-            for (char c : str.toCharArray()) {
+            int length = str.length();
+            for (int i = 0; i < length; i++) {
+                char c = str.charAt(i);
                 if (Character.isLetter(c)) {
                     System.out.print(c + " ");
                 }
@@ -40,9 +48,9 @@ class Display {
         }
         System.out.println();
     }
+}
 
 public class bit7question17 {
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -60,8 +68,5 @@ public class bit7question17 {
         dis.Display(inputString, chr);
 
         in.close();
-    }
-
-
     }
 }
