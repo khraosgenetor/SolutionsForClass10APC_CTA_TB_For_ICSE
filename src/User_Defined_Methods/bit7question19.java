@@ -63,4 +63,3 @@ public class bit7question19 {
         in.close();
     }
 }
-
