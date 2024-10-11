@@ -1,6 +1,6 @@
 package _2_LibClasses;
 
-import java.util.*;
+import java.util.Scanner;
 
 // Made by Khraos on 11-10-2024
 // System time is: 18:43 and the day is: Fri
