@@ -24,13 +24,14 @@ class DisplayHelper {
 
     // Method to check and print the number of special characters in the string
     public void display(String str) {
-        int specialCharCount = 0;
-        for (char c : str.toCharArray()) {
+        int sCC = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
             if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
-                specialCharCount++;
+                sCC++;
             }
         }
-        System.out.println("The number of special characters in the string is: " + specialCharCount);
+        System.out.println("The number of special characters in the string is: " + sCC);
     }
 }
 
@@ -39,23 +40,23 @@ public class bit7question21 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        DisplayHelper displayHelper = new DisplayHelper();
+        DisplayHelper dH = new DisplayHelper();
 
         System.out.print("Enter an integer to check if it's a perfect square: ");
         int num = in.nextInt();
-        displayHelper.display(num);
+        dH.display(num);
 
         System.out.print("Enter a string: ");
         in.nextLine(); // Clear the buffer
         String str = in.nextLine();
         System.out.print("Enter a character to check if it is in the string: ");
         char ch = in.next().charAt(0);
-        displayHelper.display(str, ch);
+        dH.display(str, ch);
 
         System.out.print("Enter another string to count special characters: ");
         in.nextLine(); // Clear the buffer
         String str2 = in.nextLine();
-        displayHelper.display(str2);
+        dH.display(str2);
 
         in.close();
     }

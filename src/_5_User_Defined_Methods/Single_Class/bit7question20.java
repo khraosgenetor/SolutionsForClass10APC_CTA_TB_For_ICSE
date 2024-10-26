@@ -15,8 +15,8 @@ public class bit7question20 {
     public double series(double a, double n) {
         double sum = 0.0;
         for (int i = 0; i < n; i++) {
-            double numerator = 1 + 3 * i;
-            double denominator = Math.pow(a, 2 + 3 * i);
+            double numerator = 1 + (3 * i);
+            double denominator = Math.pow(a, 2 + (3 * i));
             sum += numerator / denominator;
         }
         return sum;

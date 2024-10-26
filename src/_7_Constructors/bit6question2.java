@@ -19,21 +19,19 @@ class Laptop {
         price = in.nextDouble();
     }
     void discount() {
-        if( price <= 25000.0 ){
-            dis = price * 5.0/100;
-        } else if( price > 25000.0 && price <= 50000.0 ) {
-            dis = price * 7.5/100;
-        } else if (price > 50000.0 && price <= 100000.0) {
-            dis = price * 10.0/100;
-        } else {
-            dis = price * 15.0/100;
-        }
+        double rate =
+                price <= 25000 ? 5 :
+                price <= 50000 ? 7.5 :
+                price <= 100000 ? 10 :
+                    15;
+        dis = price * rate / 100;
         amt = price - dis;
     }
+
     void display() {
-        System.out.println("The name of customer: "+name);
-        System.out.println("The discount: "+dis);
-        System.out.println("The price after discount: "+amt);
+        System.out.println("The name of customer: " + name);
+        System.out.println("The discount: " + dis);
+        System.out.println("The price after discount: " + amt);
     }
 }
 
