@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class bit7question1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int arr[] = new int[20];
+        int[] arr = new int[20];
         for(int i = 0; i < arr.length; i++) {
             System.out.print("Enter member "+(i+1)+": ");
             arr[i] = in.nextInt();

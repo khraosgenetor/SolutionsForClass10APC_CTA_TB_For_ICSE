@@ -49,10 +49,10 @@ class FruitJuice {
 public class bit6question8 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        FruitJuice fruitJuice = new FruitJuice();
-        fruitJuice.input(in);
-        fruitJuice.discount();
-        fruitJuice.display();
+        FruitJuice fJ = new FruitJuice();
+        fJ.input(in);
+        fJ.discount();
+        fJ.display();
         in.close();
     }
 }

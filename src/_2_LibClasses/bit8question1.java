@@ -7,26 +7,12 @@ import java.util.Scanner;
 
 public class bit8question1 {
     public static void main(String[] args) {
-        char ch, chO;
+        char ch, chA;
         Scanner in = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        ch = in.nextLine().charAt(0);
 
-        boolean retry = true;
-
-        while(retry) {
-            System.out.print("Enter a character: ");
-            ch = in.nextLine().charAt(0);
-
-            chO = (char) (10 + ch);
-            System.out.println("The 10th character after " + ch + " is: " + chO);
-
-            System.out.print("Do you wish to retry? (Y/N): ");
-            char choice = in.next().charAt(0);
-            in.nextLine();
-
-            retry = (choice == 'Y' || choice == 'y');
-        }
-
-        in.close();
+        chA = (char) (10 + ch);
+        System.out.println("The 10th character after " + ch + " is: '" + chA +"'.");
     }
 }
-
