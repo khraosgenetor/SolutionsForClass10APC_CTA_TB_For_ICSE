@@ -9,23 +9,22 @@ public class bit9question5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence to check the biggest word: ");
-        String input = in.nextLine();
-        String longestWord = "";
-        String currentWord = "";
+        String inp = in.nextLine();
+        String lW = "", cW = "";
 
-        for (int i = 0; i <= input.length(); i++) {
-            if (i < input.length() && input.charAt(i) != ' ') {
-                currentWord += input.charAt(i);
+        for (int i = 0; i <= inp.length(); i++) {
+            if (i < inp.length() && inp.charAt(i) != ' ') {
+                cW += inp.charAt(i);
             } else {
-                if (currentWord.length() > longestWord.length()) {
-                    longestWord = currentWord;
+                if (cW.length() > lW.length()) {
+                    lW = cW;
                 }
-                currentWord = "";
+                cW = "";
             }
         }
 
-        System.out.println("Longest word: " + longestWord);
-        System.out.println("Length: " + longestWord.length());
+        System.out.println("Longest word: " + lW);
+        System.out.println("Length: " + lW.length());
         in.close();
     }
 }

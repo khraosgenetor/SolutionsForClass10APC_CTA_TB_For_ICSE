@@ -11,11 +11,13 @@ public class bit9question4 {
         Scanner in = new Scanner(System.in);
         String name = in.nextLine();
         String[] parts = new String[2];
-        int lastSpaceIndex = name.lastIndexOf(' ');
-        if (lastSpaceIndex != -1) {
-            parts[0] = name.substring(lastSpaceIndex + 1);
-            parts[1] = name.substring(0, lastSpaceIndex);
+        int lSI = name.lastIndexOf(' ');
+        if (lSI != -1) {
+            parts[0] = name.substring(lSI + 1);
+            parts[1] = name.substring(0, lSI);
             System.out.println(parts[0] + " " + parts[1]);
+        } else {
+            System.out.println(name);
         }
         in.close();
     }

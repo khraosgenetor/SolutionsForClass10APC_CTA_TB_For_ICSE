@@ -9,22 +9,22 @@ public class bit8question9 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a letter: ");
-        char inputChar = in.next().charAt(0);
+        char iC = in.next().charAt(0);
 
-        int asciiValue = (int) inputChar; // Get ASCII value
+        int aV = (int) iC; // Get ASCII value
 
-        String reversedAsciiString = "";
-        while (asciiValue != 0) {
-            reversedAsciiString += (asciiValue % 10); // Append the last digit
-            asciiValue /= 10; // Remove the last digit
+        String rAS = "";
+        while (aV != 0) {
+            rAS += (aV % 10); // Append the last digit
+            aV /= 10; // Remove the last digit
         }
 
-        int reversedAsciiValue = Integer.parseInt(reversedAsciiString);
-        char correspondingChar = (char) reversedAsciiValue; // Get character from reversed ASCII value
+        int rAV = Integer.parseInt(rAS);
+        char cC = (char) rAV; // Get character from reversed ASCII value
 
-        System.out.println("ASCII value of '" + inputChar + "' is: " + asciiValue);
-        System.out.println("Reversed ASCII value: " + reversedAsciiValue);
-        System.out.println("Corresponding character: '" + correspondingChar + "'");
+        System.out.println("ASCII value of '" + iC + "' is: " + aV);
+        System.out.println("Reversed ASCII value: " + rAV);
+        System.out.println("Corresponding character: '" + cC + "'");
 
         in.close();
     }

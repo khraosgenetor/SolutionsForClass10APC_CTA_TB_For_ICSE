@@ -9,28 +9,28 @@ public class bit9question10 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
-        String input = in.nextLine();
+        String inp = in.nextLine();
 
-        String reversed = "";
-        String currentWord = "";
+        String r = "";
+        String cW = "";
 
-        for (int i = 0; i <= input.length(); i++) {
-            if (i < input.length() && input.charAt(i) != ' ') {
-                currentWord += input.charAt(i); // Build the current word
+        for (int i = 0; i <= inp.length(); i++) {
+            if (i < inp.length() && inp.charAt(i) != ' ') {
+                cW += inp.charAt(i); // Build the current word
             } else {
-                // Append the current word to the reversed string
-                if (!currentWord.isEmpty()) {
-                    if (!reversed.isEmpty()) {
-                        reversed = currentWord + " " + reversed; // Add space before the next word
+                // Append the current word to the r string
+                if (cW.length() > 0) {
+                    if (r.length() > 0) {
+                        r = cW + " " + r; // Add space before the next word
                     } else {
-                        reversed = currentWord; // First word, no space needed
+                        r = cW; // First word, no space needed
                     }
                 }
-                currentWord = ""; // Reset current word
+                cW = ""; // Reset current word
             }
         }
 
-        System.out.println("Output: " + reversed);
+        System.out.println("Output: " + r);
         in.close();
     }
 }

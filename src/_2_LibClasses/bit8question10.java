@@ -8,19 +8,18 @@ import java.util.Scanner;
 public class bit8question10 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Menu:");
         System.out.println("1. Display the first 5 uppercase letters (A to E)");
         System.out.println("2. Display the last 5 lowercase letters (z to v)");
         System.out.print("Please select an option (1 or 2): ");
 
-        int choice = in.nextInt();
-        char startChar = (choice == 1) ? 'A' : 'z';
-        int limit = 5;
+        int ch = in.nextInt();
+        char sC = (ch == 1) ? 'A' : 'z';
+        int l = 5;
 
-        if (choice == 1 || choice == 2) {
-            System.out.println((choice == 1 ? "First" : "Last") + " 5 " + (choice == 1 ? "uppercase" : "lowercase") + " letters:");
-            for (int count = 0; count < limit; count++) {
-                System.out.print((char)(startChar + (choice == 1 ? count : -count)) + " ");
+        if (ch == 1 || ch == 2) {
+            System.out.println((ch == 1 ? "First" : "Last") + " 5 " + (ch == 1 ? "uppercase" : "lowercase") + " letters:");
+            for (int c = 0; c < l; c++) {
+                System.out.print((char)(sC + (ch == 1 ? c : -c)) + " ");
             }
             System.out.println();
         } else {

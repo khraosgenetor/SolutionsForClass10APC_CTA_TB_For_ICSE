@@ -9,30 +9,31 @@ public class bit9question7 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Input a string: ");
-        String input = in.nextLine();
-        boolean isUppercase = true;
-        StringBuilder result = new StringBuilder();
+        String inp = in.nextLine();
+        boolean iUC = true; // Flag to check if all characters are uppercase or spaces
+        String r = ""; // Initialize r as an empty string
 
-        for (int i = 0; i < input.length(); i++) {
-            char character = input.charAt(i);
-            if (!Character.isUpperCase(character)) {
-                isUppercase = false;
+        for (int i = 0; i < inp.length(); i++) {
+            char ch = inp.charAt(i);
+            // Check if the character is neither uppercase nor a space
+            if (!Character.isUpperCase(ch) && ch != ' ') {
+                iUC = false; // Set flag to false if a character is not uppercase and not a space
                 break;
             }
         }
 
-        if (!isUppercase) {
+        if (!iUC) {
             System.err.println("Input contains lowercase letters. Please enter only uppercase letters.");
         } else {
-            for (int i = 0; i < input.length(); i++) {
-                char character = input.charAt(i);
-                if (character == 'A' || character == 'E' || character == 'I' || character == 'O' || character == 'U') {
-                    result.append('*');
+            for (int i = 0; i < inp.length(); i++) {
+                char ch = inp.charAt(i);
+                if ("AEIOU".indexOf(ch) != -1) {
+                    r += '*'; // Concatenate '*' for vowels
                 } else {
-                    result.append(character);
+                    r += ch; // Concatenate the character for consonants
                 }
             }
-            System.out.println(result.toString());
+            System.out.println(r);
         }
 
         in.close();

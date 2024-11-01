@@ -12,14 +12,14 @@ public class bit8question11 {
         System.out.println("2. Display lowercase letters z to a with Unicode values");
         System.out.print("Please select an option (1 or 2): ");
 
-        int choice = in.nextInt();
+        int c = in.nextInt();
 
-        if (choice == 1) {
+        if (c == 1) {
             System.out.println("Uppercase letters A to Z with Unicode values:");
             for (char ch = 'A'; ch <= 'Z'; ch++) {
                 System.out.println(ch + ": " + (int) ch);
             }
-        } else if (choice == 2) {
+        } else if (c == 2) {
             System.out.println("Lowercase letters z to a with Unicode values:");
             for (char ch = 'z'; ch >= 'a'; ch--) {
                 System.out.println(ch + ": " + (int) ch);

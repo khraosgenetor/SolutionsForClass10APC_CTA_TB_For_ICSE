@@ -9,12 +9,11 @@ public class bit9question6 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a word: ");
-        String input = in.next();
+        String inp = in.next();
 
-        for (int i = 0; i < input.length(); i++) {
-            char character = input.charAt(i);
-            int ascii = (int) character;
-            System.out.println(character + ": " + ascii);
+        for (int i = 0; i < inp.length(); i++) {
+            char c = inp.charAt(i);
+            System.out.println(c + ": " + (int) c);
         }
 
         in.close();

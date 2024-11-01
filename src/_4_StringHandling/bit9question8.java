@@ -9,22 +9,22 @@ public class bit9question8 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
-        String input = in.nextLine();
-        StringBuilder result = new StringBuilder();
-        String currentWord = "";
+        String inp = in.nextLine();
+        String r = ""; // Initialize result as an empty string
+        String cW = "";
 
-        for (int i = 0; i <= input.length(); i++) {
-            if (i < input.length() && input.charAt(i) != ' ') {
-                currentWord += input.charAt(i);
+        for (int i = 0; i <= inp.length(); i++) {
+            if (i < inp.length() && inp.charAt(i) != ' ') {
+                cW += inp.charAt(i); // Accumulate characters in the current word
             } else {
-                if (currentWord.length() > 0) {
-                    result.append(currentWord.charAt(0));
+                if (cW.length() > 0) {
+                    r += cW.charAt(0); // Append the first character of the current word
                 }
-                currentWord = "";
+                cW = ""; // Reset currentWord for the next word
             }
         }
 
-        System.out.println("Constructed word: " + result.toString());
+        System.out.println("Constructed word: " + r); // Output the constructed word
         in.close();
     }
 }

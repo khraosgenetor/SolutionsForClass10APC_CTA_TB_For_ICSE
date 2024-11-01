@@ -10,7 +10,7 @@ public class bit9question9 {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
         String input = in.nextLine();
-        StringBuilder palindromes = new StringBuilder();
+        String palindromes = "";
         String currentWord = "";
 
         for (int i = 0; i <= input.length(); i++) {
@@ -18,18 +18,21 @@ public class bit9question9 {
                 currentWord += input.charAt(i);
             } else {
                 if (isPalindrome(currentWord)) {
-                    palindromes.append(currentWord).append(" ");
+                    palindromes += currentWord + " ";
                 }
                 currentWord = "";
             }
         }
 
-        System.out.println("Palindromes: " + palindromes.toString().trim());
+        System.out.println("Palindromes: " + palindromes.trim());
         in.close();
     }
 
     private static boolean isPalindrome(String word) {
-        StringBuilder reversed = new StringBuilder(word);
-        return word.equalsIgnoreCase(reversed.reverse().toString());
+        String reversed = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed += word.charAt(i);
+        }
+        return word.equalsIgnoreCase(reversed);
     }
 }
