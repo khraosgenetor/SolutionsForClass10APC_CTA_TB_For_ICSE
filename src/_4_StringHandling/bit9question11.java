@@ -11,26 +11,27 @@ public class bit9question11 {
         System.out.print("Enter a sentence: ");
         String input = in.nextLine();
 
-        String currentWord = "";
-        String maxVowelWord = "";
-        int maxVowelCount = 0;
+        String cW = "";
+        String mVW = "";
+        int mVC = 0;
 
         for (int i = 0; i <= input.length(); i++) {
             if (i < input.length() && input.charAt(i) != ' ') {
-                currentWord += input.charAt(i); // Build the current word
+                cW += input.charAt(i); // Build the current word
             } else {
                 // Check for vowels in the current word
-                int vowelCount = countVowels(currentWord);
+                int vC = countVowels(cW);
                 // Update the word with the most vowels
-                if (vowelCount > maxVowelCount) {
-                    maxVowelCount = vowelCount;
-                    maxVowelWord = currentWord;
+                if (vC > mVC) {
+                    mVC = vC;
+                    mVW = cW;
                 }
-                currentWord = ""; // Reset current word
+                cW = ""; // Reset current word
             }
         }
 
-        System.out.println("Output: " + maxVowelWord);
+        System.out.println("Output: " + mVW);
+        System.out.println("Vowel Count: " + mVC);
         in.close();
     }
 
@@ -38,7 +39,7 @@ public class bit9question11 {
         int count = 0;
         for (int i = 0; i < word.length(); i++) {
             char c = Character.toLowerCase(word.charAt(i)); // Convert to lowercase for uniformity
-            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            if ("aeiou".indexOf(c) != -1) {
                 count++;
             }
         }

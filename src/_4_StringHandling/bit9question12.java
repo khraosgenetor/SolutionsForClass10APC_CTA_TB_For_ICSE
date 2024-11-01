@@ -5,25 +5,25 @@ package _4_StringHandling;
 
 public class bit9question12 {
     public static void main(String[] args) {
-        String input = "Blue Bottle is in Blue Bag lying on Blue carpet";
-        String target = "Blue";
-        String replacement = "Red";
-        String result = "";
+        String str = "Blue Bottle is in Blue Bag lying on Blue carpet";
+        String find = "Blue";
+        String replace = "Red";
+        String soln = "";
 
-        int index = 0;
+        int i = 0;
 
-        while (index < input.length()) {
-            int targetIndex = input.indexOf(target, index); // Find the next occurrence of "Blue"
+        while (i < str.length()) {
+            int index = str.indexOf(find, i); // Find the next occurrence of "Blue"
 
-            if (targetIndex == -1) {
-                result += input.substring(index); // Add the remaining part of the string
+            if (index == -1) {
+                soln += str.substring(i); // Add the remaining part of the string
                 break;
             }
 
-            result += input.substring(index, targetIndex) + replacement; // Add the part before "Blue" and then "Red"
-            index = targetIndex + target.length(); // Move index past the current occurrence
+            soln += str.substring(i, index) + replace; // Add the part before "Blue" and then "Red"
+            i = index + find.length(); // Move index past the current occurrence
         }
 
-        System.out.println("Output: " + result);
+        System.out.println("Output: " + soln);
     }
 }

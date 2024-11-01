@@ -9,37 +9,36 @@ public class bit9question14 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a string: ");
-        String input = in.nextLine();
+        String inp = in.nextLine();
 
-        String result = "";
+        String r = "";
 
-        for (int i = 0; i < input.length(); i++) {
-            char currentChar = input.charAt(i);
-            char newChar = currentChar;
+        for (int i = 0; i < inp.length(); i++) {
+            char cC = inp.charAt(i);
+            char nC = cC;
 
-            if (Character.isLetter(currentChar)) {
-                char previousChar = (char) (currentChar - 1);
+            if (Character.isLetter(cC)) {
+                char pC = (char) (cC - 1);
 
-                if (!isVowel(currentChar)) {
+                if (!isVowel(cC)) {
                     // If the previous character is a vowel, replace with ASCII + 1
-                    if (isVowel(previousChar)) {
-                        newChar = (char) (currentChar + 1);
+                    if (isVowel(pC)) {
+                        nC = (char) (cC + 1);
                     } else {
                         // Replace with ASCII - 1
-                        newChar = (char) (currentChar - 1);
+                        nC = (char) (cC - 1);
                     }
                 }
             }
 
-            result += newChar; // Append the modified character to the result
+            r += nC; // Append the modified character to the result
         }
 
-        System.out.println("Output: " + result);
+        System.out.println("Output: " + r);
         in.close();
     }
 
     private static boolean isVowel(char c) {
-        c = Character.toLowerCase(c);
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return "AEIOUaeiou".indexOf(c) != -1;
     }
 }

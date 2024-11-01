@@ -9,28 +9,28 @@ public class bit9question13 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a word: ");
-        String input = in.nextLine();
+        String inp = in.nextLine();
 
-        String result = "";
+        String r = "";
 
-        for (int i = 0; i < input.length(); i++) {
-            char currentChar = input.charAt(i);
+        for (int i = 0; i < inp.length(); i++) {
+            char cC = inp.charAt(i);
             // Convert to lowercase if it is uppercase
-            if (currentChar >= 'A' && currentChar <= 'Z') {
-                currentChar += 32; // Convert to lowercase
+            if (cC >= 'A' && cC <= 'Z') {
+                cC += 32; // Convert to lowercase
             }
             // Check if the character is a vowel and replace with ASCII + 1
-            if (isVowel(currentChar)) {
-                currentChar++;
+            if (isVowel(cC)) {
+                cC++;
             }
-            result += currentChar; // Append the modified character to the result
+            r += cC; // Append the modified character to the result
         }
 
-        System.out.println("Output: " + result);
+        System.out.println("Output: " + r);
         in.close();
     }
 
     private static boolean isVowel(char c) {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return ("aeiou".indexOf(c) != -1);
     }
 }

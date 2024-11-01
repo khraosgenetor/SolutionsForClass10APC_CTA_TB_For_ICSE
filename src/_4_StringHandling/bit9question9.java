@@ -9,30 +9,30 @@ public class bit9question9 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
-        String input = in.nextLine();
-        String palindromes = "";
-        String currentWord = "";
+        String inp = in.nextLine();
+        String p = "";
+        String cW = "";
 
-        for (int i = 0; i <= input.length(); i++) {
-            if (i < input.length() && input.charAt(i) != ' ') {
-                currentWord += input.charAt(i);
+        for (int i = 0; i <= inp.length(); i++) {
+            if (i < inp.length() && inp.charAt(i) != ' ') {
+                cW += inp.charAt(i);
             } else {
-                if (isPalindrome(currentWord)) {
-                    palindromes += currentWord + " ";
+                if (isPalindrome(cW)) {
+                    p += cW + " ";
                 }
-                currentWord = "";
+                cW = "";
             }
         }
 
-        System.out.println("Palindromes: " + palindromes.trim());
+        System.out.println("Palindromes: " + p.trim());
         in.close();
     }
 
-    private static boolean isPalindrome(String word) {
-        String reversed = "";
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed += word.charAt(i);
+    private static boolean isPalindrome(String w) {
+        String r = "";
+        for (int i = w.length() - 1; i >= 0; i--) {
+            r += w.charAt(i);
         }
-        return word.equalsIgnoreCase(reversed);
+        return w.equalsIgnoreCase(r);
     }
 }
