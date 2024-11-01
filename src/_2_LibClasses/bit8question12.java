@@ -9,65 +9,80 @@ public class bit8question12 {
     }
 
     public static void printAllPatterns() {
-        // Pattern 1: A
+        printAlternatingCasePattern();
+        System.out.println(); // Line break
+        printReverseZPattern();
+        System.out.println(); // Line break
+        printDecreasingAlphabetPattern();
+        System.out.println(); // Line break
+        printEvenSkippingPattern();
+        System.out.println(); // Line break
+        printStarredAlphabetPattern();
+        System.out.println(); // Line break
+        printLowerAndUpperCaseMergedPatterns();
+    }
+
+    private static void printAlternatingCasePattern() {
         for (int i = 1; i <= 5; i++) {
-            for (char ch = (i % 2 == 1) ? 'A' : 'a'; ch < (i % 2 == 1 ? 'A' + i : 'a' + i); ch++) {
+            char startChar = (i % 2 == 1) ? 'A' : 'a';
+            for (char ch = startChar; ch < startChar + i; ch++) {
                 System.out.print(ch);
             }
             System.out.println();
         }
-        System.out.println(); // Line break
+    }
 
-        // Pattern 2: ZYXWU
+    private static void printReverseZPattern() {
         for (int i = 5; i > 0; i--) {
             for (char ch = 'Z'; ch >= 'Z' - i + 1; ch--) {
                 System.out.print(ch);
             }
             System.out.println();
         }
-        System.out.println(); // Line break
+    }
 
-        // Pattern 3: ABCD, ABC, A
-        for (int i = 5; i > 0; i -= 2) { // Control number of characters to print
-            for (char ch = 'A'; ch < 'A' + i; ch++) { // Print characters from 'A' up to 'A' + i
-                System.out.print(ch); // Print the character
+    private static void printDecreasingAlphabetPattern() {
+        for (int i = 5; i > 0; i -= 2) {
+            for (char ch = 'A'; ch < 'A' + i; ch++) {
+                System.out.print(ch);
             }
-            System.out.println(); // Move to the next line
+            System.out.println();
         }
-        System.out.println(); // Line break
+    }
 
-        // Pattern 4: PRTV
-        for (int i = 0; i < 4; i++) { // Outer loop for lines
-            for (char ch = 'P'; ch <= 'V'; ch += 2) { // Loop through 'P', 'R', 'T', 'V'
-                if (ch <= 'V' - i * 2) { // Condition to skip the last i*2 characters
+    private static void printEvenSkippingPattern() {
+        for (int i = 0; i < 4; i++) {
+            for (char ch = 'P'; ch <= 'V'; ch += 2) {
+                if (ch <= 'V' - i * 2) {
                     System.out.print(ch);
                 }
             }
-            System.out.println(); // Move to the next line after each row
+            System.out.println();
         }
-        System.out.println(); // Line break
+    }
 
-        // Pattern 5: A*B*C*D*E*
+    private static void printStarredAlphabetPattern() {
         for (int i = 5; i > 0; i--) {
             for (char ch = 'A'; ch < 'A' + i; ch++) {
                 System.out.print(ch + "*");
             }
             System.out.println();
         }
-        System.out.println(); // Line break
+    }
 
-        // Merged Patterns for Lowercase letters
-        for (char ch = 'a'; ch <= 'b'; ch++) {
-            for (int j = 0; j < 5; j++) {
-                System.out.print(ch + " ");
-            }
-            System.out.println();
+    private static void printLowerAndUpperCaseMergedPatterns() {
+        for (char ch : new char[] {'a', 'b'}) {
+            printCharacterMultipleTimes(ch);
         }
-        for (char ch = 'A'; ch <= 'B'; ch++){
-            for (int j = 0; j < 5; j++) {
-                System.out.print(ch + " ");
-            }
-            System.out.println();
+        for (char ch : new char[] {'A', 'B'}) {
+            printCharacterMultipleTimes(ch);
         }
+    }
+
+    private static void printCharacterMultipleTimes(char ch) {
+        for (int j = 0; j < 5; j++) {
+            System.out.print(ch + " ");
+        }
+        System.out.println();
     }
 }

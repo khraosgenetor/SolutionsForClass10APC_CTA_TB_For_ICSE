@@ -10,24 +10,16 @@ public class bit8question2 {
         Scanner in = new Scanner(System.in);
 
         char ch;
-        boolean retry = true;
 
-        while(retry) {
-            System.out.print("Enter a character: ");
-            ch = in.nextLine().charAt(0);
+        System.out.print("Enter a character: ");
+        ch = in.nextLine().charAt(0);
 
-            System.out.print("The next 5 characters are:");
+        System.out.print("The next 5 characters are:");
 
-            for (int i = 1; i <= 5; i++) {
-                ch++;
-                System.out.print(" " + ch);
-            }
-            System.out.print("Do you wish to retry? (Y/N): ");
-            char choice = in.next().charAt(0);
-            in.nextLine();
-
-            retry = (choice == 'Y' || choice == 'y');
+        for (int i = 1; i <= 5; i++) {
+            ch++;
+            System.out.print(" " + ch);
         }
-        in.close();
+
     }
 }

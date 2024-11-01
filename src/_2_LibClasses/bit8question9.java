@@ -8,32 +8,28 @@ import java.util.Scanner;
 public class bit8question9 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        boolean retry = true;
+        System.out.print("Enter a letter: ");
+        char inputChar = in.next().charAt(0);
 
-        while (retry) {
-            System.out.print("Enter a letter: ");
-            char inputChar = in.next().charAt(0);
-            int asciiValue = (int) inputChar; // Get ASCII value
+        int asciiValue = (int) inputChar; // Get ASCII value
+        String reversedAsciiString = reverseNumber(asciiValue);
 
-            System.out.println("ASCII value of '" + inputChar + "' is: " + asciiValue);
+        int reversedAsciiValue = Integer.parseInt(reversedAsciiString);
+        char correspondingChar = (char) reversedAsciiValue; // Get character from reversed ASCII value
 
-            String reversedAsciiString = reverseNumber(asciiValue);
-            int reversedAsciiValue = Integer.parseInt(reversedAsciiString);
-            char correspondingChar = (char) reversedAsciiValue; // Get character from reversed ASCII value
+        System.out.println("ASCII value of '" + inputChar + "' is: " + asciiValue);
+        System.out.println("Reversed ASCII value: " + reversedAsciiValue);
+        System.out.println("Corresponding character: '" + correspondingChar + "'");
 
-            System.out.println("Reversed ASCII value: " + reversedAsciiValue);
-            System.out.println("Corresponding character: '" + correspondingChar + "'");
-
-            System.out.print("Do you wish to retry? (Yy/Nn): ");
-            char choice = in.next().charAt(0);
-            retry = (choice == 'Y' || choice == 'y');
-        }
         in.close();
     }
 
     private static String reverseNumber(int number) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(number);
-        return sb.reverse().toString();
+        String returnS = "";
+        while (number != 0) {
+            returnS += (number % 10); // Append the last digit
+            number /= 10; // Remove the last digit
+        }
+        return returnS; // Return the reversed string
     }
 }

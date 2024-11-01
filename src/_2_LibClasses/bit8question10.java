@@ -8,39 +8,23 @@ import java.util.Scanner;
 public class bit8question10 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        boolean retry = true;
+        System.out.println("Menu:");
+        System.out.println("1. Display the first 5 uppercase letters (A to E)");
+        System.out.println("2. Display the last 5 lowercase letters (z to v)");
+        System.out.print("Please select an option (1 or 2): ");
 
-        while (retry) {
-            System.out.println("Menu:");
-            System.out.println("1. Display the first 5 uppercase letters (A to E)");
-            System.out.println("2. Display the last 5 lowercase letters (v to z)");
-            System.out.print("Please select an option (1 or 2): ");
-            int choice = in.nextInt();
-            in.nextLine(); // Consume the newline character
+        int choice = in.nextInt();
+        char startChar = (choice == 1) ? 'A' : 'z';
+        int limit = 5;
 
-            switch (choice) {
-                case 1:
-                    System.out.println("First 5 uppercase letters:");
-                    for (char ch = 'A'; ch <= 'E'; ch++) {
-                        System.out.print(ch + " ");
-                    }
-                    System.out.println();
-                    break;
-                case 2:
-                    System.out.println("Last 5 lowercase letters:");
-                    for (char ch = 'v'; ch <= 'z'; ch++) {
-                        System.out.print(ch + " ");
-                    }
-                    System.out.println();
-                    break;
-                default:
-                    System.out.println("Invalid option. Please select 1 or 2.");
-                    break;
+        if (choice == 1 || choice == 2) {
+            System.out.println((choice == 1 ? "First" : "Last") + " 5 " + (choice == 1 ? "uppercase" : "lowercase") + " letters:");
+            for (int count = 0; count < limit; count++) {
+                System.out.print((char)(startChar + (choice == 1 ? count : -count)) + " ");
             }
-
-            System.out.print("Do you wish to retry? (Yy/Nn): ");
-            char retryChoice = in.next().charAt(0);
-            retry = (retryChoice == 'Y' || retryChoice == 'y');
+            System.out.println();
+        } else {
+            System.out.println("Invalid option. Please select 1 or 2.");
         }
 
         in.close();
