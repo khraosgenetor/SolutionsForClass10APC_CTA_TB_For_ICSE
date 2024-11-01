@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class bit8question11 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Menu:");
         System.out.println("1. Display uppercase letters A to Z with Unicode values");
         System.out.println("2. Display lowercase letters z to a with Unicode values");
         System.out.print("Please select an option (1 or 2): ");

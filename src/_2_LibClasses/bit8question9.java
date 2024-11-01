@@ -12,7 +12,12 @@ public class bit8question9 {
         char inputChar = in.next().charAt(0);
 
         int asciiValue = (int) inputChar; // Get ASCII value
-        String reversedAsciiString = reverseNumber(asciiValue);
+
+        String reversedAsciiString = "";
+        while (asciiValue != 0) {
+            reversedAsciiString += (asciiValue % 10); // Append the last digit
+            asciiValue /= 10; // Remove the last digit
+        }
 
         int reversedAsciiValue = Integer.parseInt(reversedAsciiString);
         char correspondingChar = (char) reversedAsciiValue; // Get character from reversed ASCII value
@@ -22,14 +27,5 @@ public class bit8question9 {
         System.out.println("Corresponding character: '" + correspondingChar + "'");
 
         in.close();
-    }
-
-    private static String reverseNumber(int number) {
-        String returnS = "";
-        while (number != 0) {
-            returnS += (number % 10); // Append the last digit
-            number /= 10; // Remove the last digit
-        }
-        return returnS; // Return the reversed string
     }
 }

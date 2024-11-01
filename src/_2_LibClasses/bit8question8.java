@@ -14,15 +14,20 @@ public class bit8question8 {
         System.out.println("2. Generate lowercase letters from a to z");
         System.out.println("3. Exit");
         System.out.print("Enter your choice (1, 2, or 3): ");
-        int choice = in.nextInt();
-        in.nextLine();
+        int ch = in.nextInt();
 
-        switch (choice) {
+        switch (ch) {
             case 1:
-                generateUppercaseZtoA();
+                for (char c = 'Z'; c >= 'A'; c--) {
+                    System.out.print(c + " ");
+                }
+                System.out.println();
                 break;
             case 2:
-                generateLowercaseAtoZ();
+                for (char c = 'a'; c <= 'z'; c++) {
+                    System.out.print(c + " ");
+                }
+                System.out.println();
                 break;
             case 3:
                 System.out.println("Exiting the program.");
@@ -32,19 +37,5 @@ public class bit8question8 {
         }
 
         in.close();
-    }
-
-    private static void generateUppercaseZtoA() {
-        for (char ch = 'Z'; ch >= 'A'; ch--) {
-            System.out.print(ch + " ");
-        }
-        System.out.println();
-    }
-
-    private static void generateLowercaseAtoZ() {
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-            System.out.print(ch + " ");
-        }
-        System.out.println();
     }
 }
