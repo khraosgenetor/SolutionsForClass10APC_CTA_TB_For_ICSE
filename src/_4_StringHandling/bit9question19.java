@@ -10,36 +10,36 @@ public class bit9question19 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
-        String input = in.nextLine().toUpperCase();
+        String inp = in.nextLine().toUpperCase();
 
-        int consecutiveLetterWords = 0;
+        int cLW = 0;
 
         // Split the sentence into words manually
-        int start = 0;
-        for (int i = 0; i <= input.length(); i++) {
-            if (i == input.length() || input.charAt(i) == ' ') {
-                String word = input.substring(start, i);
+        int s = 0, len = inp.length();
+        for (int i = 0; i <= len; i++) {
+            if (i == len || inp.charAt(i) == ' ') {
+                String w = inp.substring(s, i);
 
                 // Check for consecutive letters in ascending order
-                boolean hasConsecutiveLetters = false;
-                for (int j = 1; j < word.length(); j++) {
-                    if (word.charAt(j) - word.charAt(j - 1) == 1) {
-                        hasConsecutiveLetters = true;
+                boolean hCL = false;
+                for (int j = 1; j < w.length(); j++) {
+                    if (w.charAt(j) - w.charAt(j - 1) == 1) {
+                        hCL = true;
                         break;
                     }
                 }
 
                 // Print the word and update the count
-                System.out.print(word + " ");
-                if (hasConsecutiveLetters) {
-                    consecutiveLetterWords++;
+                System.out.print(w + " ");
+                if (hCL) {
+                    cLW++;
                 }
 
-                start = i + 1; // Move to the next word
+                s = i + 1; // Move to the next word
             }
         }
 
-        System.out.println("\nConsecutive Lettered Words: " + consecutiveLetterWords);
+        System.out.println("\nConsecutive Lettered Words: " + cLW);
 
         in.close();
     }

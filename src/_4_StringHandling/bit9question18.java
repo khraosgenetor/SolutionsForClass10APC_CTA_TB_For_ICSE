@@ -9,21 +9,21 @@ public class bit9question18 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a word: ");
-        String word = in.next().toUpperCase();
+        String w = in.next().toUpperCase();
 
-        int length = word.length();
-        boolean isSpecial = word.charAt(0) == word.charAt(length - 1);
-        boolean isPalindrome = true;
+        int len = w.length();
+        boolean iS = w.charAt(0) == w.charAt(len - 1); //is Special?
+        boolean iP = true;//is Palindrome?
 
-        for (int i = 0; i < length / 2; i++) {
-            if (word.charAt(i) != word.charAt(length - i - 1)) {
-                isPalindrome = false;
+        for (int i = 0; i < len / 2; i++) {
+            if (w.charAt(i) != w.charAt(len - i - 1)) {
+                iP = false;
                 break;
             }
         }
 
-        System.out.println("Special Word: " + (isSpecial ? "Yes" : "No"));
-        System.out.println("Palindrome: " + (isPalindrome ? "Yes" : "No"));
+        System.out.println("Special Word: " + (iS ? "Yes" : "No"));
+        System.out.println("Palindrome: " + (iP ? "Yes" : "No"));
 
         in.close();
     }

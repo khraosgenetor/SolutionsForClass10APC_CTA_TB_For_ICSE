@@ -9,37 +9,37 @@ public class bit9question15 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a word: ");
-        String word = in.nextLine();
-        int value = calculateWordValue(word);
-        System.out.println(word + (isHappyWord(value) ? " is a happy word." : " is not a happy word."));
+        String w = in.nextLine();
+        int val = calcWordVal(w);
+        System.out.println(w + (isHappyWord(val) ? " is a happy word." : " is not a happy word."));
         in.close();
     }
 
-    private static int calculateWordValue(String word) {
-        int totalValue = 0;
+    private static int calcWordVal(String word) {
+        int tV = 0;
         for (int i = 0; i < word.length(); i++) {
-            char currentChar = Character.toUpperCase(word.charAt(i));
-            if (Character.isLetter(currentChar)) {
-                totalValue = totalValue * 100 + (currentChar - 'A' + 1);
+            char cC = Character.toUpperCase(word.charAt(i));
+            if (Character.isLetter(cC)) {
+                tV = tV * 100 + (cC - 'A' + 1);
             }
         }
-        return totalValue;
+        return tV;
     }
 
-    private static boolean isHappyWord(int number) {
-        while (number != 1 && number != 4) { // 4 is a known non-happy number
-            number = sumOfSquaresOfDigits(number);
+    private static boolean isHappyWord(int n) {
+        while (n != 1 && n != 4) { // 4 is a known non-happy number
+            n = sumOfSquares(n);
         }
-        return number == 1;
+        return n == 1;
     }
 
-    private static int sumOfSquaresOfDigits(int number) {
-        int sum = 0;
-        while (number > 0) {
-            int digit = number % 10;
-            sum += digit * digit;
-            number /= 10;
+    private static int sumOfSquares(int n) {
+        int s = 0;
+        while (n > 0) {
+            int d = n % 10;
+            s += d * d;
+            n /= 10;
         }
-        return sum;
+        return s;
     }
 }

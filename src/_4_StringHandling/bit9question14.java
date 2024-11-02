@@ -39,6 +39,6 @@ public class bit9question14 {
     }
 
     private static boolean isVowel(char c) {
-        return "AEIOUaeiou".indexOf(c) != -1;
+        return "AEIOUaeiou".indexOf(c) != -1;   
     }
 }

@@ -9,21 +9,21 @@ public class bit9question17 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a string: ");
-        String input = in.nextLine().toUpperCase();
+        String inp = in.nextLine().toUpperCase();
 
-        int doubleLetterCount = 0;
-        int length = input.length();
+        int dLC = 0;
+        int len = inp.length();
 
-        for (int i = 0; i < length - 1; i++) {
-            if (input.charAt(i) == input.charAt(i + 1)) {
-                doubleLetterCount++;
-                while (i < length - 1 && input.charAt(i) == input.charAt(i + 1)) {
+        for (int i = 0; i < len - 1; i++) {
+            if (inp.charAt(i) == inp.charAt(i + 1)) {
+                dLC++;
+                while (i < len - 1 && inp.charAt(i) == inp.charAt(i + 1)) {
                     i++;
                 }
             }
         }
 
-        System.out.println("Double letter sequences: " + doubleLetterCount);
+        System.out.println("Double letter sequences: " + dLC);
 
         in.close();
     }
