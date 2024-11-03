@@ -10,45 +10,39 @@ public class bit7question11 {
         Scanner in = new Scanner(System.in);
 
         int[] rollNo = new int[50];
-        int[] subjectA = new int[50];
-        int[] subjectB = new int[50];
-        int[] subjectC = new int[50];
-        double[] averages = new double[50];
+        int[] subA = new int[50];
+        int[] subB = new int[50];
+        int[] subC = new int[50];
+        double[] total = new double[50];
 
-        // Input data for each student
+        // Input data and calculate averages
         for (int i = 0; i < 50; i++) {
             System.out.print("Enter roll number: ");
             rollNo[i] = in.nextInt();
-            System.out.print("Enter marks for Subject A: ");
-            subjectA[i] = in.nextInt();
-            System.out.print("Enter marks for Subject B: ");
-            subjectB[i] = in.nextInt();
-            System.out.print("Enter marks for Subject C: ");
-            subjectC[i] = in.nextInt();
-
-            // Calculate average
-            averages[i] = (subjectA[i] + subjectB[i] + subjectC[i]) / 3.0;
+            System.out.print("Enter marks for Subject A, B, and C: ");
+            subA[i] = in.nextInt();
+            subB[i] = in.nextInt();
+            subC[i] = in.nextInt();
+            total[i] = (subA[i] + subB[i] + subC[i]) / 3.0;
         }
 
-        // Display all students' roll numbers and their averages
+        // Display all students' averages and categorize by average score
         System.out.println("\nAll Students' Averages:");
         for (int i = 0; i < 50; i++) {
-            System.out.println("Roll No: " + rollNo[i] + ", Average: " + averages[i]);
+            System.out.println("Roll No: " + rollNo[i] + ", Average: " + total[i]);
         }
 
-        // Display students with average > 80
         System.out.println("\nStudents with average > 80:");
         for (int i = 0; i < 50; i++) {
-            if (averages[i] > 80) {
-                System.out.println("Roll No: " + rollNo[i] + ", Average: " + averages[i]);
+            if (total[i] > 80) {
+                System.out.println("Roll No: " + rollNo[i] + ", Average: " + total[i]);
             }
         }
 
-        // Display students with average < 80
         System.out.println("\nStudents with average < 80:");
         for (int i = 0; i < 50; i++) {
-            if (averages[i] < 80) {
-                System.out.println("Roll No: " + rollNo[i] + ", Average: " + averages[i]);
+            if (total[i] < 80) {
+                System.out.println("Roll No: " + rollNo[i] + ", Average: " + total[i]);
             }
         }
 

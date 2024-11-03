@@ -9,26 +9,26 @@ public class bit9question23 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("INP: Type 1 for Triangle and 2 for Inverted Triangle: ");
-        int choice = in.nextInt();
+        System.out.print("Type 1 for Triangle and 2 for Inverted Triangle: ");
+        int ch = in.nextInt();
 
         System.out.print("Enter a word: ");
-        String word = in.next().toUpperCase();
-        int length = word.length();
+        String w = in.next().toUpperCase();
+        int l = w.length();
 
-        if (choice == 1) {
+        if (ch == 1) {
             // Triangle Pattern
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < l; i++) {
                 for (int j = 0; j <= i; j++) {
-                    System.out.print(word.charAt(i) + " ");
+                    System.out.print(w.charAt(i) + " ");
                 }
                 System.out.println();
             }
-        } else if (choice == 2) {
+        } else if (ch == 2) {
             // Inverted Triangle Pattern
-            for (int i = length; i > 0; i--) {
+            for (int i = l; i > 0; i--) {
                 for (int j = 0; j < i; j++) {
-                    System.out.print(word.charAt(j) + " ");
+                    System.out.print(w.charAt(j) + " ");
                 }
                 System.out.println();
             }

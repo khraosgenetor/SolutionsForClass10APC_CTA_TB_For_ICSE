@@ -8,29 +8,29 @@ import java.util.*;
 public class bit9question30 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String[] cities = new String[5]; // Array for city names
-        String[] stdCodes = new String[5]; // Array for corresponding STD codes
+        String[] city = new String[5]; // Array for city names
+        String[] stdC = new String[5]; // Array for corresponding STD codes
 
         for (int i = 0; i < 5; i++) {
             System.out.print("Enter city name: ");
-            cities[i] = in.next();
-            System.out.print("Enter STD code for " + cities[i] + ": ");
-            stdCodes[i] = in.next();
+            city[i] = in.next();
+            System.out.print("Enter STD code for " + city[i] + ": ");
+            stdC[i] = in.next();
         }
 
         System.out.print("Enter city name to search: ");
-        String searchCity = in.next();
-        boolean found = false;
+        String search = in.next();
+        boolean bool = false; // whether found or not **
 
-        for (int i = 0; i < cities.length; i++) {
-            if (cities[i].equalsIgnoreCase(searchCity)) {
-                System.out.println("Search successful. STD code of " + cities[i] + " is: " + stdCodes[i]);
-                found = true;
+        for (int i = 0; i < city.length; i++) {
+            if (city[i].equalsIgnoreCase(search)) {
+                System.out.println("Search successful. STD code of " + city[i] + " is: " + stdC[i]);
+                bool = true;
                 break;
             }
         }
 
-        if (!found) {
+        if (!bool) {
             System.out.println("Search unsuccessful, no such city in the list.");
         }
 

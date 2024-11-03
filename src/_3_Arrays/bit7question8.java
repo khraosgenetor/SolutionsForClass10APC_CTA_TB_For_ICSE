@@ -11,25 +11,25 @@ public class bit7question8 {
         int[] sda = new int[20];
         int[] even = new int[20];
         int[] odd = new int[20];
-        int evenCount = 0, oddCount = 0;
+        int eC = 0, oC = 0;
 
         System.out.println("Enter 20 numbers:");
         for (int i = 0; i < 20; i++) {
             sda[i] = in.nextInt();
             if (sda[i] % 2 == 0) {
-                even[evenCount++] = sda[i];
+                even[eC++] = sda[i];
             } else {
-                odd[oddCount++] = sda[i];
+                odd[oC++] = sda[i];
             }
         }
 
         System.out.println("\nEven numbers:");
-        for (int i = 0; i < evenCount; i++) {
+        for (int i = 0; i < eC; i++) {
             System.out.print(even[i] + " ");
         }
 
         System.out.println("\nOdd numbers:");
-        for (int i = 0; i < oddCount; i++) {
+        for (int i = 0; i < oC; i++) {
             System.out.print(odd[i] + " ");
         }
 

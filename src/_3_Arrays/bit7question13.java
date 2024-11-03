@@ -9,18 +9,25 @@ public class bit7question13 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        // Predefined array of graduation years
         int[] years = {1982, 1987, 1993, 1996, 1999, 2003, 2006, 2007, 2009, 2010};
 
-        // Input user's graduation year
         System.out.print("Enter your graduation year: ");
-        int userYear = in.nextInt();
+        int year = in.nextInt();
 
         // Perform binary search
-        Arrays.sort(years); // Ensure the array is sorted for binary search
-        int index = Arrays.binarySearch(years, userYear);
+        int left = 0, right = years.length - 1;
+        int index = -1;
 
-        // Check if the year exists
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (years[mid] == year) {
+                index = mid;
+                break; // Found the year, exit the loop
+            }
+            left = (years[mid] < year) ? mid + 1 : left;
+            right = (years[mid] >= year) ? mid - 1 : right;
+        }
+
         if (index >= 0) {
             System.out.println("Record Exists");
         } else {

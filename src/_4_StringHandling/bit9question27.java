@@ -8,25 +8,25 @@ import java.util.*;
 public class bit9question27 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String[] names = new String[10];
+        String[] n = new String[10];
 
         for (int i = 0; i < 10; i++) {
             System.out.print("Enter name " + (i + 1) + ": ");
-            names[i] = in.next();
+            n[i] = in.next();
         }
 
-        for (int i = 0; i < names.length - 1; i++)
-            for (int j = 0; j < names.length - 1 - i; j++)
-                if (names[j].compareTo(names[j + 1]) > 0) {
-                    String temp = names[j];
-                    names[j] = names[j + 1];
-                    names[j + 1] = temp;
+        for (int i = 0; i < n.length - 1; i++)
+            for (int j = 0; j < n.length - 1 - i; j++)
+                if (n[j].compareTo(n[j + 1]) > 0) {
+                    String temp = n[j];
+                    n[j] = n[j + 1];
+                    n[j + 1] = temp;
                 }
 
         System.out.println("Names in ascending order:");
-        for (String name : names)
-            System.out.println(name);
-
+        for (int i = 0; i < n.length; i++) {
+            System.out.println(n[i]);
+        }
         in.close();
     }
 }

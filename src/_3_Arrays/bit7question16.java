@@ -8,37 +8,36 @@ import java.util.*;
 public class bit7question16 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int[][] m = new int[5][6]; // 5 stores and 6 departments
-        int[] storeSales = new int[5]; // Array to store monthly sales for each store
-        int[] departmentSales = new int[6]; // Array to store monthly sales for each department
+        int[][] sales = new int[5][6]; // 5 stores and 6 departments
+        int[] storeTotals = new int[5]; // Store totals
+        int[] deptTotals = new int[6]; // Department totals
 
-        // Input the monthly rates
-        System.out.println("Enter the monthly rates for each store and department (5 stores, 6 departments):");
+        // Input monthly sales
+        System.out.println("Enter monthly sales for each store and department (5 stores, 6 departments):");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
-                System.out.print("Store " + (i + 1) + ", Department " + (j + 1) + ": ");
-                m[i][j] = in.nextInt();
+                System.out.print("Store " + (i + 1) + ", Dept " + (j + 1) + ": ");
+                sales[i][j] = in.nextInt();
             }
         }
 
-        // Calculate the monthly sales for each store and department
+        // Calculate totals
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
-                storeSales[i] += m[i][j]; // Sum for each store
-                departmentSales[j] += m[i][j]; // Sum for each department
+                storeTotals[i] += sales[i][j];
+                deptTotals[j] += sales[i][j];
             }
         }
 
-        // Display monthly sales for each store
+        // Display totals
         System.out.println("\nMonthly Sales for Each Store:");
         for (int i = 0; i < 5; i++) {
-            System.out.println("Store " + (i + 1) + ": " + storeSales[i]);
+            System.out.println("Store " + (i + 1) + ": " + storeTotals[i]);
         }
 
-        // Display monthly sales for each department
         System.out.println("\nMonthly Sales for Each Department:");
         for (int j = 0; j < 6; j++) {
-            System.out.println("Department " + (j + 1) + ": " + departmentSales[j]);
+            System.out.println("Dept " + (j + 1) + ": " + deptTotals[j]);
         }
 
         in.close();

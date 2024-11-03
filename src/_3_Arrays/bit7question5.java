@@ -20,8 +20,8 @@ public class bit7question5 {
 
         in.nextLine(); // Consume newline character
 
-        double average = 0.0;
-        double[] totalmarks = new double[n];
+        double avg = 0.0;
+        double[] total = new double[n];
         String[] name = new String[n];
 
         // Input loop for student names and marks
@@ -29,21 +29,21 @@ public class bit7question5 {
             System.out.print("Enter name of student " + (i + 1) + ": ");
             name[i] = in.nextLine();
             System.out.print("Enter the marks of " + name[i] + ": ");
-            totalmarks[i] = in.nextDouble();
+            total[i] = in.nextDouble();
             in.nextLine(); // Consume newline character
         }
 
         // Calculate the average
         for (int i = 0; i < n; i++) {
-            average += totalmarks[i];
+            avg += total[i];
         }
-        average /= n;
+        avg /= n;
 
-        System.out.println("Class Average: " + average);
+        System.out.println("Class Average: " + avg);
 
         // Calculate and print deviations
         for (int i = 0; i < n; i++) {
-            double deviation = totalmarks[i] - average;
+            double deviation = total[i] - avg;
             System.out.println("Deviation of Student " + (i + 1) + "(" + name[i] + ") is: " + deviation);
         }
 

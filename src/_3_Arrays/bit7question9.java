@@ -18,12 +18,12 @@ public class bit7question9 {
 
         // Display perfect squares
         System.out.println("Perfect square numbers:");
-        for (int i = 0; i < 20; i++) {
-            int sqrt = (int) Math.sqrt(numbers[i]);
-            if (sqrt * sqrt == numbers[i]) {
-                System.out.print(numbers[i] + " ");
+        for (int n : numbers) {
+            if ((int) Math.sqrt(n) * (int) Math.sqrt(n) == n) {
+                System.out.print(n + " ");
             }
         }
+
 
         in.close();
     }

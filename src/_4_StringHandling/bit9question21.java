@@ -1,13 +1,10 @@
 package _4_StringHandling;
 
-import java.util.*;
-
 // Made by Khraos on 31-10-2024
 // System time is: 02:56 and the day is: Thu
 
 public class bit9question21 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
         // Pattern (a)
         System.out.println("Pattern A:");
@@ -46,7 +43,5 @@ public class bit9question21 {
             }
             System.out.println();
         }
-
-        in.close();
     }
 }

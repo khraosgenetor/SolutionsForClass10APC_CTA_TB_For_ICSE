@@ -10,15 +10,15 @@ public class bit9question22 {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Type 1 for Triangle and 2 for Inverted Triangle: ");
-        int choice = in.nextInt();
+        int ch = in.nextInt();
 
         System.out.print("Enter terms: ");
-        int terms = in.nextInt();
+        int t = in.nextInt();
 
-        if (choice == 1) {
+        if (ch == 1) {
             // Pattern for Inverted Triangle of Stars
-            for (int i = terms; i > 0; i--) {
-                for (int j = 0; j < terms - i; j++) {
+            for (int i = t; i > 0; i--) {
+                for (int j = 0; j < t - i; j++) {
                     System.out.print("  ");
                 }
                 for (int j = 0; j < i; j++) {
@@ -26,9 +26,9 @@ public class bit9question22 {
                 }
                 System.out.println();
             }
-        } else if (choice == 2) {
+        } else if (ch == 2) {
             // Pattern for Inverted Triangle of Alphabets
-            for (int i = terms; i > 0; i--) {
+            for (int i = t; i > 0; i--) {
                 char letter = 'A';
                 for (int j = 0; j < i; j++) {
                     System.out.print(letter + " ");

@@ -8,15 +8,15 @@ import java.util.*;
 public class bit9question29 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String[] words = new String[10];
+        String[] w = new String[10];
 
         for (int i = 0; i < 10; i++) {
             System.out.print("Enter word " + (i + 1) + ": ");
-            words[i] = in.next();
+            w[i] = in.next();
         }
 
         System.out.println("Palindromic words:");
-        for (String word : words) {
+        for (String word : w) {
             if (isPalindrome(word)) {
                 System.out.println(word);
             }
@@ -25,10 +25,10 @@ public class bit9question29 {
         in.close();
     }
 
-    public static boolean isPalindrome(String word) {
-        int len = word.length();
+    public static boolean isPalindrome(String w) {
+        int len = w.length();
         for (int i = 0; i < len / 2; i++) {
-            if (word.charAt(i) != word.charAt(len - 1 - i)) {
+            if (w.charAt(i) != w.charAt(len - 1 - i)) {
                 return false;
             }
         }

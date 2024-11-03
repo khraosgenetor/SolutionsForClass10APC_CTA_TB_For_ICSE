@@ -25,8 +25,8 @@ public class bit9question25 {
 
         // Display countries starting with a vowel
         for (int i = 0; i < 10; i++) {
-            char firstChar = countries[i].toUpperCase().charAt(0);
-            if (firstChar == 'A' || firstChar == 'E' || firstChar == 'I' || firstChar == 'O' || firstChar == 'U') {
+            char fC = countries[i].charAt(0);
+            if ("AEIOUaeiou".indexOf(fC) != -1) {
                 System.out.println(countries[i]+"\t"+capitals[i]);
             }
         }

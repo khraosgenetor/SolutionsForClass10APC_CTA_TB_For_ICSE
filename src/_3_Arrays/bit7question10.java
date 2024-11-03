@@ -8,50 +8,36 @@ import java.util.*;
 public class bit7question10 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int[] rollNumbers = new int[40];
-        int[] englishMarks = new int[40];
-        int[] physicsMarks = new int[40];
-        int[] chemistryMarks = new int[40];
-        int[] mathMarks = new int[40];
-        final int PASS_MARK = 35;
+        int[] rNO = new int[40];
+        int[] engM = new int[40];
+        int[] phyM = new int[40];
+        int[] chemM = new int[40];
+        int[] mathM = new int[40];
+        final int PASS = 35;
 
-        // Input roll numbers and marks for each student
+        // Input roll numbers and marks
         for (int i = 0; i < 40; i++) {
             System.out.print("Enter roll number for student " + (i + 1) + ": ");
-            rollNumbers[i] = in.nextInt();
+            rNO[i] = in.nextInt();
 
-            System.out.print("Enter English marks: ");
-            englishMarks[i] = in.nextInt();
-
-            System.out.print("Enter Physics marks: ");
-            physicsMarks[i] = in.nextInt();
-
-            System.out.print("Enter Chemistry marks: ");
-            chemistryMarks[i] = in.nextInt();
-
-            System.out.print("Enter Math marks: ");
-            mathMarks[i] = in.nextInt();
+            System.out.print("Enter English, Physics, Chemistry, and Math marks: ");
+            engM[i] = in.nextInt();
+            phyM[i] = in.nextInt();
+            chemM[i] = in.nextInt();
+            mathM[i] = in.nextInt();
         }
 
-        // Check promotion eligibility for each student
+        // Check promotion eligibility
         System.out.println("\nPromotion Results:");
         for (int i = 0; i < 40; i++) {
-            int passCount = 0;
+            int c = 0;
 
-            // Check if student passed in English
-            boolean passedEnglish = englishMarks[i] >= PASS_MARK;
+            if (phyM[i] >= PASS) c++;
+            if (chemM[i] >= PASS) c++;
+            if (mathM[i] >= PASS) c++;
 
-            // Count the number of other science subjects with passing marks
-            if (physicsMarks[i] >= PASS_MARK) passCount++;
-            if (chemistryMarks[i] >= PASS_MARK) passCount++;
-            if (mathMarks[i] >= PASS_MARK) passCount++;
-
-            // Determine promotion status
-            if (passedEnglish && passCount >= 2) {
-                System.out.println("Roll No. " + rollNumbers[i] + ": Promotion is Granted");
-            } else {
-                System.out.println("Roll No. " + rollNumbers[i] + ": Promotion is not Granted");
-            }
+            System.out.println("Roll No. " + rNO[i] + ": Promotion is " +
+                    (engM[i] >= PASS && c >= 2 ? "Granted" : "not Granted"));
         }
 
         in.close();

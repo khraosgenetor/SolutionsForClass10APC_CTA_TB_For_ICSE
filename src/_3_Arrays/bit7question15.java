@@ -9,8 +9,7 @@ public class bit7question15 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int[][] N = new int[4][4];
-        int evenSum = 0;
-        int oddProduct = 1;
+        int evenSum = 0, oddProduct = 1;
         boolean hasOdd = false; // Flag to check if there's at least one odd number
 
         // Input the elements of the 2D array
@@ -18,12 +17,6 @@ public class bit7question15 {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 N[i][j] = in.nextInt();
-            }
-        }
-
-        // Calculate the sum of even numbers and product of odd numbers
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
                 if (N[i][j] % 2 == 0) {
                     evenSum += N[i][j]; // Add to sum if even
                 } else {
@@ -35,11 +28,7 @@ public class bit7question15 {
 
         // Output results
         System.out.println("Sum of all even numbers: " + evenSum);
-        if (hasOdd) {
-            System.out.println("Product of all odd numbers: " + oddProduct);
-        } else {
-            System.out.println("No odd numbers were entered.");
-        }
+        System.out.println(hasOdd ? "Product of all odd numbers: " + oddProduct : "No odd numbers were entered.");
 
         in.close();
     }
